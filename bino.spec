@@ -102,6 +102,6 @@ fi
 
 %changelog
 
-* Wed Jun 07 2017 David Vásquez <davidjeremias82 AT gmail DOT com> - 1.6.5-2
+* Wed Jun 07 2017 David Vásquez <davidva AT tutanota DOT com> - 1.6.5-2
 - Initial build
 
