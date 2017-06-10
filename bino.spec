@@ -27,7 +27,6 @@ BuildRequires:      desktop-file-utils
 BuildRequires:      texinfo
 BuildRequires:      pkgconfig(libass)
 BuildRequires:      pkgconfig(x11)
-BuildRequires:      libGLEWmx
 BuildRequires:      gettext-devel
 BuildRequires:      libquadmath-devel
 BuildRequires:      ffmpeg-devel
