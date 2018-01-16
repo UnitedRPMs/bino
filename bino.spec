@@ -1,11 +1,10 @@
-%global gitdate 20170524
-%global commit0 d6ab95c0c7c6fcd815c7a2e5b93c19d9d0d14067
+%global commit0 05ebde239e74acc0845ad761448f7ae7039291e5
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:               bino
-Version:            1.6.5
-Release:            2%{?gver}%{dist}
+Version:            1.6.6
+Release:            2%{dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 
 Source:             http://git.savannah.gnu.org/cgit/bino.git/snapshot/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
@@ -100,6 +99,9 @@ fi
 
 
 %changelog
+
+* Tue Jan 16 2018 David Va <davidva AT tutanota DOT com> - 1.6.6-2
+- Updated to 1.6.6
 
 * Wed Jun 07 2017 David Vásquez <davidva AT tutanota DOT com> - 1.6.5-2
 - Initial build
