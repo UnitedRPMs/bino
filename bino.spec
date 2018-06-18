@@ -4,7 +4,7 @@
 
 Name:               bino
 Version:            1.6.6
-Release:            2%{dist}
+Release:            3%{dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 
 Source:             http://git.savannah.gnu.org/cgit/bino.git/snapshot/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
@@ -99,6 +99,9 @@ fi
 
 
 %changelog
+
+* Mon Jun 18 2018 David Va <davidva AT tutanota DOT com> - 1.6.6-3
+- Rebuild for libass
 
 * Tue Jan 16 2018 David Va <davidva AT tutanota DOT com> - 1.6.6-2
 - Updated to 1.6.6
