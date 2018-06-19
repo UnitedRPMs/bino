@@ -1,0 +1,23 @@
+--- a/src/media_object.cpp
++++ b/src/media_object.cpp
+@@ -59,6 +59,10 @@
+ 
+ #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(54, 25, 0)
+ #define AV_CODEC_ID_TEXT CODEC_ID_TEXT
++#endif
++
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(58, 9, 100)
++#define CODEC_FLAG_EMU_EDGE   0x4000
+ #endif
+ 
+ // The read thread.
+@@ -905,7 +909,7 @@
+ #ifdef FF_API_LOWRES
+             lowres = codec_ctx->lowres;
+ #endif
+-            if (lowres || (codec && (codec->capabilities & CODEC_CAP_DR1)))
++            if (lowres || (codec && (codec->capabilities & AV_CODEC_CAP_DR1)))
+                 codec_ctx->flags |= CODEC_FLAG_EMU_EDGE;
+         }
+         // Find and open the codec. AV_CODEC_ID_TEXT is a special case: it has no decoder since it is unencoded raw data.
+

@@ -1,4 +1,4 @@
-%global commit0 05ebde239e74acc0845ad761448f7ae7039291e5
+%global commit0 8323caace08e20e23896b12e1cce987306a492cf
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
@@ -9,6 +9,7 @@ Summary:            Video Player with 3D and Multi-Display Video Support
 
 Source:             http://git.savannah.gnu.org/cgit/bino.git/snapshot/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1:            bino.desktop
+Patch:              ffmpeg4_fix.patch
 
 URL:                http://bino.nongnu.org/
 Group:              Applications/Multimedia
@@ -43,7 +44,7 @@ Bino is a video player with two special features:
 
 
 %prep
-%autosetup -n %{commit0}
+%autosetup -n %{commit0} -p1
 mkdir m4
 autoreconf -i
 
@@ -102,6 +103,7 @@ fi
 
 * Mon Jun 18 2018 David Va <davidva AT tutanota DOT com> - 1.6.6-3
 - Rebuild for libass
+- Updated to current commit
 
 * Tue Jan 16 2018 David Va <davidva AT tutanota DOT com> - 1.6.6-2
 - Updated to 1.6.6
