@@ -3,7 +3,7 @@
 %global gver .git%{shortcommit0}
 
 Name:               bino
-Version:            1.6.6
+Version:            1.6.7
 Release:            3%{dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 
@@ -100,6 +100,9 @@ fi
 
 
 %changelog
+
+* Thu Sep 06 2018 David Va <davidva AT tuta DOT io> - 1.6.7-3
+- Updated to 1.6.7
 
 * Mon Jun 18 2018 David Va <davidva AT tutanota DOT com> - 1.6.6-3
 - Rebuild for libass
