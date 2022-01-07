@@ -1,15 +1,11 @@
-%global commit0 8323caace08e20e23896b12e1cce987306a492cf
-%global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
-%global gver .git%{shortcommit0}
-
 Name:               bino
-Version:            1.6.7
-Release:            3%{dist}
+Version:            1.6.8
+Release:            7%{dist}
 Summary:            Video Player with 3D and Multi-Display Video Support
 
-Source:             http://git.savannah.gnu.org/cgit/bino.git/snapshot/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source:             https://bino3d.org/releases/%{name}-%{version}.tar.xz
 Source1:            bino.desktop
-Patch:              ffmpeg4_fix.patch
+#Patch:              ffmpeg4_fix.patch
 
 URL:                http://bino.nongnu.org/
 Group:              Applications/Multimedia
@@ -22,6 +18,7 @@ BuildRequires:      pkgconfig(openal)
 BuildRequires:      pkgconfig
 BuildRequires:      autoconf
 BuildRequires:      automake
+BuildRequires:      gcc-c++
 BuildRequires:      libtool
 BuildRequires:      desktop-file-utils
 BuildRequires:      texinfo
@@ -30,6 +27,8 @@ BuildRequires:      pkgconfig(x11)
 BuildRequires:      gettext-devel
 BuildRequires:      libquadmath-devel
 BuildRequires:      ffmpeg-devel
+BuildRequires:      libsndfile
+BuildRequires:      flac-libs
 
 Requires:           hicolor-icon-theme
 
@@ -44,7 +43,7 @@ Bino is a video player with two special features:
 
 
 %prep
-%autosetup -n %{commit0} -p1
+%autosetup -n %{name}-%{version} -p1
 mkdir m4
 autoreconf -i
 
@@ -100,6 +99,9 @@ fi
 
 
 %changelog
+
+* Wed Jan 05 2022 David Va <davidva AT tuta DOT io> - 1.6.8-7
+- Updated to 1.6.8
 
 * Thu Sep 06 2018 David Va <davidva AT tuta DOT io> - 1.6.7-3
 - Updated to 1.6.7
